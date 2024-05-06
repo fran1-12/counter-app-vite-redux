@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'counter',
   initialState:{
-    counter:11
+    counter:10
   },
   reducers: {
     increment: (state) => {
@@ -14,10 +14,10 @@ export const counterSlice = createSlice({
       state.counter += 1
     },
     decrement: (state)=>{
-      state.counter = state.counter - 1
+      state.counter -= 1
     },
-    incrementBy3: (state)=>{
-      state.counter += 3
+    incrementBy3: (state, action)=>{
+      state.counter += action.payload
     },
   },
 })
